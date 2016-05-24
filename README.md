@@ -5,5 +5,5 @@
 #목표
 1. 일단 'Django'를 설치하세요.
 '''
-$ pip install django
+$ ./python_packages.sh
 '''
