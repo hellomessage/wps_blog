@@ -9,12 +9,9 @@
 
 ## 설피할 패키지
 
-1. 일단 'Django'를 설치하세요.
-
 ```
-$ pip install -r requirements.txt
+$ ./python_packages.sh
 ```
-
 
 #PROJEXT => 우리가 개발하고 있는 최종 큰 프로젝트
 
