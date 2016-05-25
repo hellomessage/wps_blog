@@ -30,8 +30,12 @@ from django.http.response import HttpResponse
 def home(request):
 	return HttpResponse("hello world han's")
 
+def room(requset, room_id):
+	return HttpResponse("This is a room detail" + room_id)
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
 	url(r'^$', home),
+	url(r'^rooms/(?P<room_id>\d+)/$', room),
 ]
