@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from django.http.response import HttpResponse
-
+from wpsblog.controller import home, room
+ 
 # MVC
 # M Business Loginc
 # v template/client
@@ -25,13 +25,6 @@ from django.http.response import HttpResponse
 
 # Model => 더 무겁게
 # Contriller => 더 가볍게 (즉 기능이 Contriller => Model.....)
-
-#MVC Controller
-def home(request):
-	return HttpResponse("hello world han's")
-
-def room(requset, room_id):
-	return HttpResponse("This is a room detail" + room_id)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
