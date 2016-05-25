@@ -16,6 +16,22 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from django.http.response import HttpResponse
+
+# MVC
+# M Business Loginc
+# v template/client
+# C View, Model
+
+# Model => 더 무겁게
+# Contriller => 더 가볍게 (즉 기능이 Contriller => Model.....)
+
+#MVC Controller
+def home(request):
+	return HttpResponse("hello world han's")
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+	url(r'^$', home),
 ]
