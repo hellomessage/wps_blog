@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from wpsblog.controller import home, room
+from wpsblog.views import home, room
  
 # MVC
 # M Business Loginc
