@@ -16,12 +16,20 @@ def room(request, room_id):
 	)
 
 def news(request):
+#	from IPython import embed; embed()
 	search = request.GET.get("search")	#html에서 get으로 넘기는 것을 받아옴 
 	print(search)
 
 	response = requests.get("https://watcha.net/home/news.json?page=1&per=50")
 	news_dict = json.loads(response.text)	# response.json()
 	news_list = news_dict.get("news")
+
+	form_html = """
+		<form method="GET" action="/news/">
+			<input type="text" name="search">
+			<input type="submit" value="검색">
+		</form>
+	"""
 
 	if search:
 		news_list = list(filter(
@@ -31,6 +39,7 @@ def news(request):
 
 	content = "<h1>News</h1>" +\
 		"<p> This is news page.</p>" +\
+		form_html +\
 		"<p>{count} 개의 영화 뉴스 정보가 있습니다.</p>".format(count=len(news_list)) +\
 		"".join([
 			"<h2>{title}</h2><img src={image_src}><p>{content}</p>".format(
