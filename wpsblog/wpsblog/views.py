@@ -2,14 +2,10 @@ import json
 import requests
 
 from django.http.response import HttpResponse
-from django.conf import settings
+from wpsblog.renderer import render
 
 def home(request):
-	with open(settings.BASE_DIR + "/wpsblog/templates/home.html", "r") as template:
-		content = template.read()
-		content = content.replace("## site_name ##", "WPS_BLOG")
-		
-		return HttpResponse(content)
+	return render("home", {"site_name" : "wps blog"})		
 
 def room(request, room_id):
 	#방 번호 ( room_id ) 직방의 데이터를 그대로 보여주는 뷰(컨트롤러)
@@ -19,8 +15,6 @@ def room(request, room_id):
 		response.content,
 		content_type="application/json", #json형식으로변환
 	)
-
-	
 
 def news(request):
 	search = request.GET.get("search")	#html에서 get으로 넘기는 것을 받아옴 
@@ -35,9 +29,6 @@ def news(request):
 			news_list,
 		))
 
-	with open(settings.BASE_DIR + "/wpsblog/templates/news.html", "r") as template:
-		content = template.read()
-
 		count = len(news_list)
 		news_content = "".join([
 			"<h2>{title}</h2><img src={image_src}><p>{content}</p>".format(
@@ -49,10 +40,7 @@ def news(request):
 			in news_list
 		])
 
-		content = content.replace("## count ##", str(count))
-		content = content.replace("## news_content ##", news_content)
- 
-		return HttpResponse(
-			content
-		)
-
+	return render("news", {
+		"count":str(count),
+		"news_content":news_content,
+	})
