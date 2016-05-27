@@ -29,18 +29,18 @@ def news(request):
 			news_list,
 		))
 
-		count = len(news_list)
-		news_content = "".join([
-			"<h2>{title}</h2><img src={image_src}><p>{content}</p>".format(
-				title=news.get('title'),
-				image_src=news.get('image'),
-				content=news.get('content'),
-			)
-			for news
-			in news_list
-		])
+	count = len(news_list)
+	news_content = "".join([
+		"<h2>{title}</h2><img src={image_src}><p>{content}</p>".format(
+			title=news.get('title'),
+			image_src=news.get('image'),
+			content=news.get('content'),
+		)
+		for news
+		in news_list
+	])
 
 	return render("news", {
-		"count":str(count),
-		"news_content":news_content,
+		"count" : str(count),
+		"news_content" : news_content,
 	})
