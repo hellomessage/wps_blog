@@ -1,4 +1,6 @@
-<html>News</html>
+{% include "header.html" %}
+
+<h1>News</h1>
 <p>This is movie news</p>
 <p>{{ news_list | length }}개의 영화 정보가 표시됩니다.<p>
 
@@ -17,3 +19,5 @@
 	{% endfor%}
 </ul>
 {{news_content}}
+
+{% include "footer.html" %}
