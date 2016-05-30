@@ -16,15 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from wpsblog.views import home, room, news
- 
-# MVC
-# M Business Loginc
-# v template/client
-# C View, Model
+#from wpsblog.views.home import home
+#from wpsblog.views.room import room
+#from wpsblog.views.news import news
 
-# Model => 더 무겁게
-# Contriller => 더 가볍게 (즉 기능이 Contriller => Model.....)
+#from wpsblog.views import home, news, room 
+from wpsblog.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
