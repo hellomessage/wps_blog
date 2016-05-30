@@ -1,4 +1,18 @@
-{% include "header.html" %}
-<h1>Home</h1>
-<p>{{ site_name }}에 방문해 주셔서 감사합니다.</p>
-{% include "footer.html" %}
+{% extends "base.html" %}
+{% block title%} Home {% endblock %}
+
+{% block content %}
+	<h1>Home</h1>
+	<p>{{ site_name }}에 방문해 주셔서 감사합니다.</p>
+	<p>{{ news_list|length }} 개의 영화 정보가 표시됩니다.</p>
+
+	<ul>
+		{% for news in news_list %}
+		<li>
+			<h2>{{ news.title }}</h2>
+			<p>{{ news.content }}</p>
+			<img src="{{ news.image }}"/>
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
