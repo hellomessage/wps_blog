@@ -1,15 +1,14 @@
 import json
-import request
+import requests
 
 from django.http.response import HttpResponse
-from djando.shortcuts import render
-
-
+from django.shortcuts import render
 
 def home(request):
 	return render(
+		request,
 		"home.html",
-		{ "site_name" : "wps blog"}
+		{ "site_name" : "wps blog" }
 	)
 
 #	templete = loader.get_template("home.html")
@@ -32,21 +31,21 @@ def room(request, rooo_id):
 def news(request):
 	search = request.GET.get("search")
 
-	response = request.get("https://watcha.net/home/news.json?page=18&per=50")
-		news_dict = json.loder(response.text)
-		new_list = news_dict.get("news")
+	response = requests.get("https://watcha.net/home/news.json?page=18&per=50")
+	news_dict = json.loads(response.text)
+	news_list = news_dict.get("news")
 
-		if search:
-			news_list = list(filter(
-				lambda news: search in news.get('title'),
-				news_list,
-			))
+	if search:
+		news_list = list(filter(
+			lambda news: search in news.get("title"),
+			news_list,
+		))
 
-		return render(
-			request,
-			"news.html",
-			{"news_list" : news_list},
-		)
+	return render(
+		request,
+		"news.html",
+		{ "news_list" : news_list },
+	)
 #		template = loader.get_template("news.html")
 #		return HttpResponse((
 #				template.rander(
