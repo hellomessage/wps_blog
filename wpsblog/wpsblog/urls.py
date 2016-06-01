@@ -13,20 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
-#from wpsblog.views.home import home
-#from wpsblog.views.room import room
-#from wpsblog.views.news import news
-
-#from wpsblog.views import home, news, room 
 from wpsblog.views import *
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', home, name="home"),
+    url(r'^about/us/$', about, name="about"),
+    url(r'^rooms/(?P<room_id>\d+)/$', room, name="room"),
+    url(r'^news/$', news, name="news"),
 
-	url(r'^$', home, name="home"),
-	url(r'^rooms/(?P<room_id>\d+)/$', room, name="room"),
-	url(r'^news/$', news, name="news"),
+    url(r'^policy/(?P<policy_name>\w+)/$', policy, name="policy"),
+#    url(r'^policy/', include([
+#        url(r'terms/$', terms, name="terms"),
+#        url(r'privacy/$', privacy, name="privacy"),
+#        url(r'disclaimer/$', disclaimer, name="disclaimer"),
+#    ])),
 ]

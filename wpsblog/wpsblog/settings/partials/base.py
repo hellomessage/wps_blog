@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-	'wpsblog',
+    'wpsblog',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -71,5 +70,3 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wpsblog.wsgi.application'
-
-
