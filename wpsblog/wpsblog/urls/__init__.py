@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^rooms/(?P<room_id>\d+)/$', room, name="room"),
     url(r'^news/$', news, name="news"),
     url(r'^policy/', include("wpsblog.urls.policy", namespace="policy")),
+    url(r'^posts/$', list, name="post-list"),
+    url(r'^posts/(?P<posts_id>\d+)/$', detail, name="post-detail"),
 ]
