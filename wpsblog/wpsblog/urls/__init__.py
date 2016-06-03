@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^news/$', news, name="news"),
     url(r'^policy/', include("wpsblog.urls.policy", namespace="policy")),
     url(r'^posts/$', list, name="post-list"),
-    url(r'^posts/(?P<posts_id>\d+)/$', detail, name="post-detail"),
+    url(r'^posts/(?P<post_id>\d+)/$', detail, name="post-detail"),
 ]
