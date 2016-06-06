@@ -18,3 +18,17 @@ class Post(models.Model):
                 "post_id": self.id,
             }
         )
+
+
+class NaverPost(models.Model):
+
+    title = models.CharField(
+        max_length=256,
+    )
+
+    content = models.TextField()
+    thumbnil_image_url = models.URLField()
+    original_url = models.URLField()
+
+    def __str__(self):
+        return self.title

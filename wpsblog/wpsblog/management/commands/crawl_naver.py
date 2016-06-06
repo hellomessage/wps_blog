@@ -11,7 +11,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         query = options.get("query")
-        
         self.stdout.write(" 네이버에서 {query} 블로그 포스트를 크롤링 합니다.".format(
             query=query,
         ))
