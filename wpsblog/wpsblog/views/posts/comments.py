@@ -10,6 +10,3 @@ def comments_create(request, post_id):
         content=content,
     )
     return redirect(comment)
-
-
-

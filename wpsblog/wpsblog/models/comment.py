@@ -9,7 +9,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.content
-    
+
     def get_absolute_url(self):
         return reverse(
             "post-detail",
