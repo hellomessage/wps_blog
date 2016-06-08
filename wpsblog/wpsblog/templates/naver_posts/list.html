@@ -4,16 +4,22 @@
 {% block content %}
 <h1>Naver Posts</h1>
 <p>{{ naver_posts | length }} 개의 네이버 포스트에 대한 결과 입니다.</p>
+
 {% if keyword %}
-<p><b>{{ keyword}}</b>로 크롤링된 네이버 포스트입니다.</p>
+<p><span style="color:red"><b>{{ keyword}}</span></b>로 크롤링된 네이버 포스트입니다.</p></b>
 {% endif %}
+
+{% if query %}
+<p><span style="color:red"><b>{{ query }}</b></span>가 제목에 포함된 네이버 포스트입니다.</p></b>
+{% endif %}
+
 <ul>
     {% for naver_post in naver_posts %}
     <li>
         <img src="{{ naver_post.thumbnail_image_url }}" alt="{{ naver_post.title }}"/>
         <h2>{{ naver_post.title }}</h2>
         <p>
-            <b>{{ naver_post.keyword }} </b>
+            <b>{{ naver_post.keyword }}</b>
             {{ naver_post.content }}
         </p>
         <a href="{{ naver_post.original_url}}" target="_blank">원문 바로가기:</a>

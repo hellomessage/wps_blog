@@ -16,6 +16,11 @@ class Post(models.Model):
         max_length=120,
     )
     content = models.TextField()
+    image = models.TextField()
+    image = models.ImageField(
+        blank=True,
+        null=True,
+    )
     is_public = models.BooleanField(
         default=True,
     )

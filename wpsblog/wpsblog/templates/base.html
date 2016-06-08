@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-
+{% load staticfiles %}<!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
-	<title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
+<link rel="stylesheet" href="{% static "css/application.css" %}">
+<script src="{% static "js/application.js" %}"></script>
 <body>
-	{% include "header.html" %}
+    <span onclick="clickHandler();">{% include "header.html" %}</span>
 	{% block content %}
 	{% endblock %}
-	{% include "footer.html" %}
+    {% include "footer.html" %}
 </body>
