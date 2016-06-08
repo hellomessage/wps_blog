@@ -18,7 +18,7 @@ def naver_posts_list(request):
         "naver_posts/list.html",
         {
             "keyword": keyword,
-            "query" : query,
+            "query": query,
             "naver_posts": naver_posts,
         },
     )

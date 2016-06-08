@@ -12,8 +12,13 @@ urlpatterns = [
     url(r'^about/us/$', about, name="about"),
     url(r'^rooms/(?P<room_id>\d+)/$', room, name="room"),
     url(r'^news/$', news, name="news"),
+    
     url(r'^policy/', include("wpsblog.urls.policy", namespace="policy")),
+    
     url(r'^posts/$', list, name="post-list"),
+    url(r'^posts/new/$', new, name="post-new"),
+    url(r'^posts/create/$', create, name="post-create"),
     url(r'^posts/(?P<post_id>\d+)/$', detail, name="post-detail"),
+
     url(r'^naver/posts/$', naver_posts_list, name="naver-posts-list"),
 ]
