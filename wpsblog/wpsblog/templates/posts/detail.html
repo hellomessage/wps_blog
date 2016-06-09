@@ -5,5 +5,9 @@
 <ul>
     <h2>{{ post.title }}</h2>
     <li><p>{{ post.content }}</p></li>
+    <li><a href="{% url "posts:edit" post_id=post.id %}"><b>Edit</b></a></li>
+    <li><a href="{% url "posts:delete" post_id=post.id %}"><b>Delete</b></a></li>
 </ul>
 {% endblock %}
+
+

@@ -7,7 +7,5 @@ def new(request, post_id):
     return render(
         request,
         "posts/new.html",
-        {
-            #"post": Post.objects.get(id=post_id),
-        }
+        {}
     )
