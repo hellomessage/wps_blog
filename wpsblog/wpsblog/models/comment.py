@@ -5,7 +5,7 @@ class Comment(models.Model):
 
     post = models.ForeignKey("Post")
 
-    contnet = models.TextField()
+    content = models.TextField()
 
     def __str__(self):
         return self.content
@@ -16,4 +16,4 @@ class Comment(models.Model):
             kwargs={
                 "post_id": self.id,
             }
-        ) + "#comment-" + str(self.id)
+        ) + "comment-" + str(self.id)
