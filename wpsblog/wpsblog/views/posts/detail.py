@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from wpsblog.models import Post
+from wpsblog.models import Post, Comment
 
 
 def detail(request, post_id):
@@ -8,6 +8,6 @@ def detail(request, post_id):
         request,
         "posts/detail.html",
         {
-            "post": Post.objects.get(id=post_id)
+            "post": Post.objects.get(id=post_id),
         },
     )
