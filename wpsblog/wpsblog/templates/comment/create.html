@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>Post content</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="댓글" value="{% if post.comments_set.content %}{{ post.title }}{% endif %}">
+    <input type="text" name="content" placeholder="본문" value="{% if post %}{{ post.content }}{% endif %}">
+    <input type="submit" value="publish">
+</form>
+{% include "posts/form.html" with action=post.get_update_url %}
+{% endblock %}

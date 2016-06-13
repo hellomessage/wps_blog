@@ -5,3 +5,7 @@ from .create import create
 from .edit import edit
 from .update import update
 from .delete import delete
+from .comments import comments_create
+from .comments import comments_edit
+from .comments import comments_update
+from .comments import comments_delete

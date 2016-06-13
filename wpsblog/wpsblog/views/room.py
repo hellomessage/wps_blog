@@ -9,4 +9,4 @@ def room(request, rooo_id):
     return HttpResponse(
         response.content,
         content_type="application/json",
-        )
+    )
