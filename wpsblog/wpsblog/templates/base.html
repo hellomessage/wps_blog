@@ -2,12 +2,12 @@
 <head>
 	<meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/application.css" %}">
+    <script src="{% static "js/application.js" %}"></script>
 </head>
-<link rel="stylesheet" href="{% static "css/application.css" %}">
-<script src="{% static "js/application.js" %}"></script>
 <body>
-    <span onclick="clickHandler();">{% include "header.html" %}</span>
+    {% include "header.html" %}
 	{% block content %}
 	{% endblock %}
-    {% include "footer.html" %}
+    <span onclick="clickHandler();">{% include "footer.html" %}</span>
 </body>

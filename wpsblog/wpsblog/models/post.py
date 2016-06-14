@@ -17,7 +17,6 @@ class Post(models.Model):
     )
 
     content = models.TextField()
-    image = models.TextField()
     image = models.ImageField(
         blank=True,
         null=True,
