@@ -11,4 +11,4 @@ MEDIA_ROOT = os.path.join(
     "dist",
     "madia",
 )
-MWDIA_URL = '/media/'
+MEDIA_URL = '/media/'
