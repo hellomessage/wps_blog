@@ -6,9 +6,11 @@ from .base import PROJECT_ROOT_DIR
 
 STATIC_URL = '/static/'
 
+#Media files
 MEDIA_ROOT = os.path.join(
     PROJECT_ROOT_DIR,
     "dist",
-    "madia",
+    "media",
 )
+
 MEDIA_URL = '/media/'

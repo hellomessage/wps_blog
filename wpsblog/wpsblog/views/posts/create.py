@@ -19,5 +19,4 @@ def create(request):
         content=content,
         image=image,
     )
-     
     return redirect(post)

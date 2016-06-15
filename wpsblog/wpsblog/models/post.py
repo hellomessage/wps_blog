@@ -26,10 +26,8 @@ class Post(models.Model):
         default=True,
     )
 
-
     def __str__(self):
         return self.title
-
 
     def get_absolute_url(self):
         return reverse(
@@ -39,16 +37,15 @@ class Post(models.Model):
             }
         )
 
+    def get_update_url(self):
+        return reverse(
+            "posts:update",
+            kwargs={
+                "post_id": self.id,
+            }
+        )
 
-#    def get_update_url(self):
-#        return reverse(
-#            "posts:update",
-#            kwargs={
-#                "post_id": self.id,
-#            }
-#
-#
-#    def get_image_url(self):
-#        if self.image:
-#            return self.image.url
-#        return "http://placehold.it/300x200"
+    def get_image_url(self):
+        if self.image:
+            return self.image.url
+        return "http://placehold.it/300x200"
