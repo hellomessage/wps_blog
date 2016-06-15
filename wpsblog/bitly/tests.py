@@ -20,7 +20,5 @@ class BitlinkModelTestCase(TestCase):
             original_url=test_original_url,
         )
         self.assertTrue(
-            bitlink.shorten_hash,        
+                bitlink.shorten_hash,
         )
-
-

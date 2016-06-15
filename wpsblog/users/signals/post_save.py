@@ -11,4 +11,3 @@ def post_save_user(sender, instance, create, **kwargs):
         user_profile = UserProfile.objects.create(
             user=instance,
         )
-

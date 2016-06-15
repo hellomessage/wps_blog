@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.core.urlesolvers import reverse
 
+
 class HomeViewTestCase(TestCase):
 
     def setUp(self):
@@ -12,12 +13,12 @@ class HomeViewTestCase(TestCase):
             200,
         )
 
-class PricingViewTestCasw(TestCase)
+
+class PricingViewTestCasw(TestCase):
 
     def setUp(self):
         self.response = self.client.get(reverse("pricing"))
 
     def test_pricing_view_should_return_200(self):
         self.asserEqual(
-                
         )

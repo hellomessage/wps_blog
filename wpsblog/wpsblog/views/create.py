@@ -1,4 +1,4 @@
-from django.shoirtcuts import render, ridirect
+from django.shortcuts import render, ridirect
 from django.core.urlresolvers import reverse
 from django.views.genetic import View
 

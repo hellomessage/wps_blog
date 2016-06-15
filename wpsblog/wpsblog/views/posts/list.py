@@ -7,10 +7,7 @@ from wpsblog.models import Post
 
 
 def list(request):
-#    page = request.GET.get("page", 1)
-#    per = request.GET.get("page", 5)
-#
-#    paginator = Pagi
+
     return render(
         request,
         "posts/list.html",
@@ -18,7 +15,12 @@ def list(request):
             "posts": Post.objects.public(),
         },
     )
+
 '''
+#    page = request.GET.get("page", 1)
+#    per = request.GET.get("page", 5)
+#
+#    paginator = Pagi
 #class PostListView(ListView):
 #    model = Post
 #    templete_name = "posts/list.html"
