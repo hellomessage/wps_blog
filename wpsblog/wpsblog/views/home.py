@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import View
+from django.core.urlresolvers import reverse
 '''
 #from django.views.generic import TemplateView
 #
@@ -22,6 +23,14 @@ from django.views.generic import View
 #        )
 '''
 
+'''
+def home(request):
+    return render(
+        request,
+        "home.html",
+        {"site_name": "wps blog"},
+    )
+'''
 
 def home(request):
     return render(
