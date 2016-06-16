@@ -8,15 +8,11 @@ def create(request):
     content = request.POST.get("content")
     image = request.FILES.get("image")
 
-    print(title)
-    print(content)
-    print(image)
-
-#    from IPython import embed; embed()
-
     post = Post.objects.create(
+        user=request.user,
         title=title,
         content=content,
         image=image,
     )
+
     return redirect(post)

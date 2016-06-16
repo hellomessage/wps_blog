@@ -15,6 +15,7 @@ def signup(request):
             email=email,
         )
         return redirect(reverse("auth:login"))
+
     return render(
         request,
         "auth/signup.html",
