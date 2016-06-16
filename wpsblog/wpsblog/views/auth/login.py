@@ -14,7 +14,6 @@ def login(request):
             auth_login(request, user)
             return redirect(reverse("home"))
         return redirect(reverse("auth:login"))
-     
     return render(
         request,
         "auth/login.html",
