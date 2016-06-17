@@ -9,7 +9,7 @@ from wpsblog.models import Comment
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home, name="home"),
+    url(r'^$', HomeView.as_view(), name="home"),
     url(r'^about/us/$', about, name="about"),
     url(r'^rooms/(?P<room_id>\d+)/$', room, name="room"),
     url(r'^news/$', news, name="news"),

@@ -17,7 +17,7 @@ def list(request):
         request,
         "posts/list.html",
         {
-            #"posts": Post.objects.public(),
+            # "posts": Post.objects.public(),
             "posts": posts,
         },
     )
