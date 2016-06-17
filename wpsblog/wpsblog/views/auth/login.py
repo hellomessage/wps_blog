@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login as auth_login
 def login(request):
 
     if (request.method == "POST"):
+
         username = request.POST.get("username")
         password = request.POST.get("password")
         next_page = request.POST.get("next_page") or reverse("auth:mypage")

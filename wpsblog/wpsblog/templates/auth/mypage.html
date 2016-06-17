@@ -6,13 +6,25 @@
 <p>{{ request.user.username }}의 마이페이지입니다.</p>
 
 <h2>내가 쓴 글 ( {{ request.user.post_set.count }})</h2>
-
 <ul>
     {% for post in request.user.post_set.all %}
     <li>
         <a href="{% url "posts:detail" post_id=post.id %}">{{ post.title }}</a>
     </li>
     {% endfor %}
-
 </ul>
+
+<h2>내가 쓴 댓글 ( {{ request.user.comment_set.count }})</h2>
+<ul>
+    {% for comment in request.user.comment_set.all %}
+    <li>
+        <p>
+            <a href="{{ comment.get_absolute_url }}">{{ comment.content }}</a>
+            on
+            <a href="{{ comment.get_absolute_url }}">{{ comment.post.title }}</a>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
