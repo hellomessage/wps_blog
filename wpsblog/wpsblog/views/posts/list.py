@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.views.generic import ListView
+from .base import PostBaseView
 
 from wpsblog.models import Post
-from django.views.generic.list import ListView
 
 
-class PostListView(ListView):
-    model = Post
+class PostListView(PostBaseView, ListView):
     template_name = "posts/list.html"
     context_object_name = "posts"
 
