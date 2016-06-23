@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^policy/', include("wpsblog.urls.policy", namespace="policy")),
     url(r'^posts/', include("wpsblog.urls.posts", namespace="posts")),
     url(r'^', include("wpsblog.urls.auth", namespace="auth")),
+    url(r'^bitly/', include("wpsblog.urls.bitly", namespace="bitly")),
     url(r'^naver/posts/$', naver_posts_list, name="naver-posts-list"),
     url(r'^news/$', news, name="news"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

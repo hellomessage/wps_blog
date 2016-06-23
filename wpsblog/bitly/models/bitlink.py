@@ -18,3 +18,4 @@ class Bitlink(models.Model):
 
     def __str__(self):
         return self.original_url
+    # TODO:
