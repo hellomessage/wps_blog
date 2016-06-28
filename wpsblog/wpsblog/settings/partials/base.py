@@ -36,10 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'wpsblog',
     'users',
     'posts',
     'bitly',
-    'wpsblog',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
