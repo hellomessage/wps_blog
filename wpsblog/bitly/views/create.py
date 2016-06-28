@@ -22,9 +22,4 @@ class BitlinkCreateView(View):
             original_url=original_url,
         )
 
-        # bitlink.id => bitlink.shorten_hash 생성( hash_id )
-        hashids = Hashids(salt="awesome bitlenk", min_length=4)
-        bitlink.shorten_hash = hashids.encode(bitlink.id)
-        bitlink.save()
-
         return redirect(reverse("home"))
