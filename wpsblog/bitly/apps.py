@@ -1,3 +1,4 @@
+# 처음
 from django.apps import AppConfig
 
 
