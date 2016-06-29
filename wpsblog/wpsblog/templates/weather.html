@@ -1,0 +1,27 @@
+<div class="forecast">
+    
+    <!-- forecast information -->
+    <div class="forecast-information">
+        <span class="city">{{ weather_dict.forecast_information.0.city }}</span>
+    </div>
+    
+    <!-- current conditions -->
+    <div class="current-conditions">
+        <span class="icon"><img src="http://www.google.com/{{ weather_dict.current_conditions.0.icon }}" /></span>
+        <span class="temp">{{ weather_dict.current_conditions.0.temp_c }} °C</span>
+        <span class="condition">{{ weather_dict.current_conditions.0.condition }}</span>
+        <span class="humidity">{{ weather_dict.current_conditions.0.humidity }}</span>
+    </div>
+
+    <!-- forecasts -->
+    <div class="forecasts">
+        {% for day in weather_dict.forecast_conditions %}
+        <div class="forecast-day">
+            <span class="icon"><img src="http://www.google.com/{{ day.icon }}" /></span>
+            <span class="day">{{ day.day_of_week }}</span>
+            <span class="high-low">{{ day.high }}°C / {{ day.low }}°C</span>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
