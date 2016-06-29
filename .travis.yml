@@ -6,5 +6,7 @@ python:
 install:
     - pip install -r requirements/development.txt
 script:
-    - pep8 .
+    - pep8 wpsblog/
     - python wpsblog/manage.py users posts bitly wpsblog -v2
+notifications:
+    slack: hans-hq:q9E0pL4DsJ5fLU0TlxIEgAxR
