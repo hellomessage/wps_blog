@@ -13,7 +13,7 @@ class PricingViewTestCase(TestCase):
             200,
         )
 
-    def test_pricing_view_should_have_goot_title(self):
+    def test_pricing_view_should_have_good_title(self):
         self.assertContains(
             self.response,
             "Priving Table",
